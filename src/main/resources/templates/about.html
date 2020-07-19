@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+</head>
+
+<body>
+<!-- 导航 -->
+<nav th:replace="_fragments::menu(5)" class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
+</nav>
+
+    <!-- 中间内容 -->
+    <div class="m-container m-padded-tb-big ">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <div class="eleven wide column">
+                    <div class="ui rounded segment">
+                        <img src="https://picsum.photos/id/1012/800/600" alt="" class="ui rounded image">
+                    </div>
+                </div>
+
+                <!-- 右边个人信息 -->
+                <div class="five wide column">
+                    <div class="ui top attached segment">
+                        <div class="ui header">关于我</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <p class="m-text">Jason,一个热爱编程的年轻人，喜欢折腾自己；喜欢学习新鲜技术，希望能够在学习路上一直走下去。</p>
+                        <p class="m-text">Jason,一个热爱编程的年轻人。</p>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui orange left pointing label m-margin-tb-tiny">编程</div>
+                        <div class="ui orange left pointing label m-margin-tb-tiny">健身</div>
+                        <div class="ui orange left pointing label m-margin-tb-tiny">运动</div>
+                        <div class="ui orange left pointing label m-margin-tb-tiny">协作</div>
+                    </div>
+                    <div class="ui attached segment">
+                        <div class="ui teal left pointing label m-margin-tb-tiny">Java</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">Python</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">JavaWeb</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">C++</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">PythonWeb</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">NLP</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">MYSQL</div>
+                        <div class="ui teal left pointing label m-margin-tb-tiny">...</div>
+                    </div>
+
+                    <div class="ui bottom attached segment">
+                        <a href="https://github.com/Jason0asdjia" target="_blank" class="ui circular icon button"><i class="github icon"></i></a>
+                        <a href="#" class="ui qq circular icon button" data-content="2436943262" data-position="bottom center"><i class="qq icon"></i></a>
+                        <a href="#" class="ui email circular icon button" data-content="xuweiqiao@126.com" data-position="bottom center"><i class="envelope icon"></i></a>
+                        <!-- <a href="#" class="ui wechat circular icon button"><i class="weixin icon"></i></a> -->
+                    </div>
+
+                    <!-- wechat -->
+                    <!-- <div class="ui wechat-qr flowing popup transition hidden">
+                    <img src="" alt="" class="ui rounded image" style="width: 100px;">
+                </div> -->
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <!-- 底部footer -->
+    <footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive m-opactity-mini">
+    </footer>
+
+    <th:block th:replace="_fragments :: scripts">
+    </th:block>
+
+    <script>
+        // 下拉菜单css实现
+        $('.menu.toggle').click(function() {
+            $('.m-item').toggleClass('m-mobile-hide');
+
+        });
+
+        //显示qq号,email
+        $('.qq').popup();
+        $('.email').popup();
+
+        //弹微信二维码
+        // $('.wechat').popup({
+        //     popup : $('.wechat-qr'),
+        //     on : "hover",
+        //     posoition:"bottom center"
+        // });
+    </script>
+
+
+</body>
+
+</html>

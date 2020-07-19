@@ -1,0 +1,230 @@
+/*
+因为Semantic UI的css优先级很高，所以用户自定义时，需要将自定的css设置高优先级 
+ */
+
+body {
+    background: url(../images/criss-cross.png);
+}
+
+
+/* 标题栏的宽度 */
+
+.m-padded-tb-mini {
+    padding-top: 0.2em !important;
+    padding-bottom: 0.2em !important;
+}
+
+
+/* 中间部分 */
+
+.m-padded-tb-tiny {
+    padding-top: 0.3em !important;
+    padding-bottom: 0.3em !important;
+}
+
+.m-padded-tb-small {
+    padding-top: 0.5em !important;
+    padding-bottom: 0.5em !important;
+}
+
+.m-padded-tb {
+    padding-top: 1em !important;
+    padding-bottom: 1em !important;
+}
+
+.m-padded-tb-large {
+    padding-top: 2em !important;
+    padding-bottom: 2em !important;
+}
+
+.m-padded-tb-big {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+.m-padded-tb-huge {
+    padding-top: 4em !important;
+    padding-bottom: 4em !important;
+}
+
+
+/* --margin-- */
+
+.m-margin-bottom-small {
+    margin-bottom: 0.5em !important;
+}
+
+.m-margin-tb-tiny {
+    margin-top: 0.3em !important;
+    margin-bottom: 0.3em !important;
+}
+
+.m-margin-top-small {
+    margin-top: 0.5em !important;
+}
+
+.m-margin-top {
+    margin-top: 1em !important;
+}
+
+.m-margin-top-large {
+    margin-top: 2em !important;
+}
+
+
+/* --positon-- */
+
+.m-top-right {
+    position: absolute !important;
+    top: 0 !important;
+    right: 0 !important;
+}
+
+.m-fixed {
+    position: fixed !important;
+    z-index: 10 !important;
+}
+
+.m-right-bottom {
+    bottom: 0 !important;
+    right: 0 !important;
+}
+
+
+/* --display-- */
+
+.m-inline-block {
+    display: inline-block !important;
+}
+
+.m-container {
+    max-width: 100em !important;
+    margin: auto !important;
+}
+
+.m-container-small {
+    max-width: 70em !important;
+    margin: auto !important;
+}
+
+
+/* --padded-- */
+
+.m-padded-lr-reponsive {
+    padding-left: 2em !important;
+    padding-right: 2em !important;
+}
+
+.m-padded-min {
+    padding: 0.2em !important;
+}
+
+.m-padded {
+    padding: 1em !important;
+}
+
+.m-padded-tiny {
+    padding: 0.3em !important;
+}
+
+
+/* 底部栏宽度 */
+#e-wapper {
+    width: 100%;
+    position: relative;
+    height: auto;
+    min-height: 87%/* IE6不支持，IE6要单独配置*/
+}
+
+#e-footer {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 250px;
+    /* footer的高度一定要是固定值*/
+}
+
+#e-content {
+    padding-bottom: 250px;
+}
+
+.m-padded-tb-massive {
+    padding-top: 3em !important;
+    padding-bottom: 3em !important;
+}
+
+
+/* --color-- */
+
+.m-black {
+    color: #333 !important;
+}
+
+
+/* --shadow-- */
+
+.m-shadow-small {
+    -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+}
+
+
+/* ---text---- */
+
+.m-text {
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8 !important;
+}
+
+.m-text-thin {
+    font-weight: 300 !important;
+}
+
+.m-text-spaced {
+    letter-spacing: 1px !important;
+}
+
+.m-text-lined {
+    line-height: 1.8 !important;
+}
+
+.m-opactity-normal {
+    opacity: 0.95 !important;
+}
+
+.m-opactity-min {
+    opacity: 0.65 !important;
+}
+
+.m-opactity-tiny {
+    opacity: 0.5 !important;
+}
+
+.m-mobile-show {
+    display: none !important;
+}
+
+
+/* 媒体查询，手机端隐藏导航栏 */
+
+@media screen and (max-width: 768px) {
+    .m-mobile-hide {
+        display: none !important;
+    }
+    .m-mobile-show {
+        display: block !important;
+    }
+    .m-padded-lr-reponsive {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+    .m-mobile-wide {
+        width: 100% !important;
+    }
+    .m-mobile-lr-clear {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="_fragments :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客管理</title>
+</head>
+
+<body>
+    <!-- 导航 -->
+    <nav class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <h2 class="ui header teal item">管理后台</h2>
+                <a href="#" class="active item m-item m-mobile-hide"><i class="home icon"></i>博客</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="idea icon"></i>分类</a>
+                <a href="#" class="item m-item m-mobile-hide"><i class="tags icon"></i>标签</a>
+
+                <!-- 头像部分 -->
+                <div class="right m-item menu m-mobile-hide">
+                    <div class="ui dropdown item">
+                        <div class="text">
+                            <img src="../../static/images/terminal.ico" alt="" class="ui avatar image">Jason
+                        </div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <a href="#" class="item">注销</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 手机端的下拉菜单 -->
+        <a href="#" class="ui menu toggle icon black button m-top-right m-mobile-show">
+            <i class="sidebar icon "></i>
+        </a>
+    </nav>
+    <div class="ui attached pointing menu">
+        <div class="ui container">
+            <div class="right menu">
+                <a href="#" class="item">发布</a>
+                <a href="#" class="gray active item">列表</a>
+            </div>
+        </div>
+    </div>
+    <!-- 中间内容 -->
+    <div class="m-container-small m-padded-tb-big ">
+        <div class="ui container">
+            <form action="#" method="post" class="ui segment form">
+                <div class="inline fields">
+                    <div class="field">
+                        <input type="text" name="title" placeholder="标题">
+                    </div>
+                    <div class="field">
+                        <div class="ui selection dropdown">
+                            <input type="hidden" name="type">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">
+                                分类
+                            </div>
+                            <div class="menu">
+                                <div class="item" data-value="1">错误日志</div>
+                                <div class="item" data-value="2">日常报告</div>
+                                <div class="item" data-value="3">博客列表</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <div class="checkbox">
+                            <input type="checkbox" id="recommend" name="recommend">
+                            <label for="recommend">推荐</label>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <button class="ui mini teal basic button">
+                            <i class="search icon"></i>搜索
+                        </button>
+                    </div>
+                    <div class="field">
+                        <button class="ui mini orange basic button">
+                            <i class="edit icon"></i>新增
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- 表格 -->
+            <table class="ui unstackable celled table">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>标题</th>
+                        <th>类型</th>
+                        <th>推荐</th>
+                        <th>更新时间</th>
+                        <th>操作</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>window更新</td>
+                        <td>认知升级</td>
+                        <td>是</td>
+                        <td>2020-7-17</td>
+
+                        <td>
+                            <a href="#" class="ui mini teal  button">编辑</a>
+                            <a href="#" class="ui mini red  button">删除</a>
+                        </td>
+                    </tr>
+                </tbody>
+
+                <tfoot>
+                    <tr>
+                        <th colspan="6">
+                            <div class="ui mini right floated pagination menu">
+                                <a href="#" class="icon item">
+                                    <i class="left chevron icon"></i>
+                                </a>
+                                <a class="item">1</a>
+                                <a class="item">2</a>
+                                <a class="item">3</a>
+                                <a class="item">4</a>
+                                <a class="icon item">
+                                    <i class="right chevron icon"></i>
+                                </a>
+                            </div>
+                        </th>
+                    </tr>
+                </tfoot>
+            </table>
+
+        </div>
+
+
+    </div>
+
+    <!-- 底部footer -->
+    <footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive m-opactity-mini">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="three wide column">
+                    <div class="ui inverted link list ">
+                        <div class="item">
+                            <img src="../../static/images/terminal.ico" class="ui rounded image" alt="" style="width:80px">
+                        </div>
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced">最新博客</h4>
+                    <div class="ui inverted link list ">
+                        <a href="#" class="item">测试一</a>
+                        <a href="#" class="item">测试二</a>
+                        <a href="#" class="item">测试三</a>
+
+                    </div>
+                </div>
+                <div class="three wide column">
+                    <h4 class="ui inverted header m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list ">
+                        <a href="#" class="item m-text-spaced">Email:xuweiqiao@126.com</a>
+                        <a href="#" class="item m-text-spaced">QQ : 2436943262</a>
+                    </div>
+                </div>
+                <div class="seven wide column">
+                    <h4 class="ui inverted header m-text-spaced">关于博客</h4>
+                    <p class="m-opactity-min m-text-spaced">搭建该博客的初衷是学习框架知识，同时博客可以用来记录自己在程序员成长中的点点滴滴</p>
+                </div>
+
+            </div>
+
+            <!-- 底部线 -->
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opactity-tiny">Copyright <i class="copyright outline icon"></i> 2020 Designed by Jason</p>
+        </div>
+
+
+    </footer>
+
+
+    <th:block th:replace="_fragments :: scripts">
+    </th:block>
+
+    <script>
+        // 下拉菜单css实现
+        $('.menu.toggle').click(function() {
+            $('.m-item').toggleClass('m-mobile-hide');
+
+        });
+
+
+        //用户名下拉
+        $('.ui.dropdown').dropdown({
+            on: 'hover'
+        });
+    </script>
+
+
+</body>
+
+</html>
