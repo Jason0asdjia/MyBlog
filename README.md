@@ -1,6 +1,6 @@
 # MyBlog
 🌍
-基于`SpringBoot` `Mybatis` `Semantic UI`搭建的个人博客
+基于`SpringBoot` `JPA` `Semantic UI`搭建的个人博客
 
 参照[这位大佬的博客教程及源码]，对前端页面进行改造，制作出适合自己的前端页面。
 
