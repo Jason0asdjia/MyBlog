@@ -23,13 +23,15 @@
 
 
 ## 后端
-    - 核心框架：SpringBoot 2.x
-    - 项目构建：jdk1.8、Maven 3
-    - 持久层框架：JPA
-    - 模板框架：Thymeleaf
-    - 分页插件：PageHelper
-    - 加密：MD5加密
-    - 运行环境：
+- 具体设计可以查看逻辑包内的README
+
+        - 核心框架：SpringBoot 2.x
+        - 项目构建：jdk1.8、Maven 3
+        - 持久层框架：JPA
+        - 模板框架：Thymeleaf
+        - 分页插件：PageHelper
+        - 加密：MD5加密
+        - 运行环境：
 
 ## 数据库 
     - Mysql 5.7

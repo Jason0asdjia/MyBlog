@@ -49,6 +49,9 @@ body {
 
 
 /* --margin-- */
+.m-margin-auto{
+    margin: 200px auto !important;
+}
 
 .m-margin-bottom-small {
     margin-bottom: 0.5em !important;
@@ -104,6 +107,11 @@ body {
 
 .m-container-small {
     max-width: 70em !important;
+    margin: auto !important;
+}
+
+.m-container-tiny{
+    max-width: 30em !important;
     margin: auto !important;
 }
 

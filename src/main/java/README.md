@@ -33,3 +33,13 @@ JPA配置
     博客标签Tag
     博客评论Comment
     用户User    
+    
+    
+## 后台管理
+1. 登录
+  
+        登录页面和后台管理页面
+        UserService和UserRepository
+        LoginController
+        MD5加密
+        登录拦截
