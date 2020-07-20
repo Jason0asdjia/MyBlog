@@ -41,6 +41,7 @@
     - 各个界面的动画设置https://animate.style/
     - 可以利用滚动检测插件制作定位弹窗等.http://imakewebthings.com/waypoints/
     - 滚动侦测可以添加动画让弹窗更丝滑(侧边目录弹窗)
-
+	- 评论插件
+	- 安全管理shiro
     
 [这位大佬的博客教程及源码]:https://www.cnblogs.com/one-star/category/1772840.html
