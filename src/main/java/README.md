@@ -41,5 +41,5 @@ JPA配置
         登录页面和后台管理页面
         UserService和UserRepository
         LoginController
-        MD5加密
+        MD5加密(最好在前端登录框就进行加密)
         登录拦截
