@@ -4,12 +4,11 @@
 <head th:replace="admin/_fragments :: head(~{::title})">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>分类新增</title>
+    <title>标签新增</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
     <link rel="stylesheet" href="../../static/css/user.css" th:href="@{/css/user.css}">
-    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css"
-          th:href="@{/lib/editormd/css/editormd.css}">
+
 </head>
 
 <body>
@@ -47,8 +46,8 @@
 <div class="ui attached pointing menu">
     <div class="ui container">
         <div class="right menu">
-            <a href="#" class="gray active item" th:href="@{/admin/types/input}">新增</a>
-            <a href="#" class="item" th:href="@{/admin/types}">列表</a>
+            <a href="#" class="gray active item" th:href="@{/admin/tags/input}">新增</a>
+            <a href="#" class="item" th:href="@{/admin/tags}">列表</a>
         </div>
     </div>
 </div>
@@ -64,7 +63,7 @@
 <!-- 中间内容 -->
 <div class="m-container-small m-padded-tb-big">
     <div class="ui container">
-        <form action="#" method="post" class="ui form" th:object="${type}" th:action="*{id}==null?@{/admin/types}:@{/admin/types/{id}(id=*{id})}">
+        <form action="#" method="post" class="ui form" th:object="${tag}" th:action="*{id}==null?@{/admin/tags}:@{/admin/tags/{id}(id=*{id})}">
 
             <input type="hidden" name="id" th:value="*{id}">
             <div class="required field">
@@ -89,7 +88,7 @@
 
             <!-- 返回，保存，发布 -->
             <div class="ui right aligned container">
-                <button type="button" class="ui button"><a th:href="@{/admin/types}">返回</a></button>
+                <button type="button" class="ui button"><a th:href="@{/admin/tags}">返回</a></button>
                 <button class="ui teal button">提交</button>
             </div>
         </form>

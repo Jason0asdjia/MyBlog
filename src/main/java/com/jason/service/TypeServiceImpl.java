@@ -3,12 +3,14 @@ package com.jason.service;
 import com.jason.NotFoundException;
 import com.jason.dao.TypeRespository;
 import com.jason.po.Type;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 /**
  * @author Jason
@@ -45,7 +47,8 @@ public class TypeServiceImpl implements TypeService {
             throw new NotFoundException("id类型不存在");
         }
 //        typeRespository.deleteById(id);
-        return typeRespository.save(type);
+        BeanUtils.copyProperties(type, t);
+        return typeRespository.save(t);
     }
 
     @Override
@@ -56,5 +59,10 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public Type getTypeByName(String name) {
         return typeRespository.findByName(name);
+    }
+
+    @Override
+    public List<Type> listType() {
+        return typeRespository.findAll();
     }
 }

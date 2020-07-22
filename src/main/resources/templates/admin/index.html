@@ -11,7 +11,7 @@
 
 <body>
     <!-- 导航 -->
-    <nav th:replace="admin/_fragments::menu(1)" class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
+    <nav th:replace="admin/_fragments::menu(0)" class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
         <div class="ui container">
             <div class="ui inverted secondary stackable menu">
                 <h2 class="ui header teal item">管理后台</h2>
@@ -103,7 +103,7 @@
     </footer>
 
 
-    <!--/*/<th:block th:replace="_fragments :: scripts">/*/-->
+    <!--/*/<th:block th:replace="admin/_fragments :: scripts">/*/-->
     <!-- Semantic UI基于jquery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <!-- Semantic UI 的JS CDN 放在最底部 -->

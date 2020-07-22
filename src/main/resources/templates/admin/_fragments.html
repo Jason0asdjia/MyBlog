@@ -8,11 +8,7 @@
 
         <!-- Semantic UI css的CDN -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.css">
-        <link rel="stylesheet" href="../../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
         <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.css" th:href="@{/lib/editormd/css/editormd.css}">
-        <link rel="stylesheet" href="../../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
-        <link rel="stylesheet" href="../../static/css/animate.css" th:href="@{/css/animate.css}">
-        <link rel="stylesheet" href="../../static/css/typo.css" th:href="@{/css/typo.css}">
         <link rel="stylesheet" href="../../static/css/user.css" th:href="@{/css/user.css}">
     </head>
 </head>
@@ -30,7 +26,8 @@
             <div class="right m-item menu m-mobile-hide">
                 <div class="ui dropdown item">
                     <div class="text">
-                        <img src="../../static/images/terminal.ico" th:src="@{/images/terminal.ico} "alt="" class="ui avatar image">Jason
+                        <img src="../../static/images/terminal.ico" th:src="@{${session.user.avatar}} "alt="" class="ui avatar image">
+                        <span th:text="${session.user.nickname}">  </span>
                     </div>
                     <i class="dropdown icon"></i>
                     <div class="menu">
@@ -97,29 +94,13 @@
 
 </footer>
 
-<th:block th:fragment="scripts">
+<!--/*/<th:block th:fragment="scripts">/*/-->
     <!-- Semantic UI基于jquery -->
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
     <!-- Semantic UI 的JS CDN 放在最底部 -->
     <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.10/semantic.min.js"></script>
-
-    <!-- 平滑滚动 -->
-    <!-- <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script> -->
-    <script src="../../static/lib/scrollTo/jquery.scrollTo.min.js" th:src="@{/lib/scrollTo/jquery.scrollTo.min.js}"></script>
-
-    <!-- 滚动侦测 -->
-    <script src="../../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
-
-    <!-- 代码高亮 -->
-    <script src="../../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
-
-    <!-- 自动生成目录 -->
-    <script src="../../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
-
-    <!-- 二维码生成 -->
-    <script src="../../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
     <!-- Markdown   -->
     <script src="../../static/lib/editormd/editormd.js" th:src="@{/lib/editormd/editormd.js}"></script>
-</th:block>
+<!--/*/</th:block>/*/-->
 </body>
 </html>

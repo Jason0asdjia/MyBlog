@@ -4,6 +4,8 @@ import com.jason.po.Type;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 /**
  * 分类的增删改
  * @author Jason
@@ -21,5 +23,9 @@ public interface TypeService {
     void deleteType(Long id);
 
     Type getTypeByName(String name);
+
+    List<Type> listType();
+
+
 }
 
