@@ -7,7 +7,7 @@ package com.jason.vo;
 public class BlogQuery {
     private String title;
     private Long typeId;
-    private  boolean recommend;
+    private boolean recommend;
 
     public String getTitle() {
         return title;

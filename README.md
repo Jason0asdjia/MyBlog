@@ -44,5 +44,6 @@
 	- 评论插件
 	- 安全管理shiro
 	- 分页管理PageHelper
+	- 添加博客时的标签自动添加
     
 [这位大佬的博客教程及源码]:https://www.cnblogs.com/one-star/category/1772840.html
