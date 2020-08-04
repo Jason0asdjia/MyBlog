@@ -20,7 +20,8 @@
     - 平滑滚动jquery.scrollTo  https://github.com/flesler/jquery.scrollTo
     - 目录生成Tocbot https://tscanlin.github.io/tocbot/   正文的标题必须有*id*
     - 二维码生成qrcode.js http://davidshimjs.github.io/qrcodejs/
-
+       
+    - markdown转htmlcommonmark-java
 
 ## 后端
 - 具体设计可以查看逻辑包内的README
@@ -45,5 +46,8 @@
 	- 安全管理shiro
 	- 分页管理PageHelper
 	- 添加博客时的标签自动添加
+	- 全局搜索可以改用ElasticSearch
+	
+	-部署后二维码的域名设置
     
 [这位大佬的博客教程及源码]:https://www.cnblogs.com/one-star/category/1772840.html

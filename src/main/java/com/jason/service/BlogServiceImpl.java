@@ -4,11 +4,15 @@ import com.jason.NotFoundException;
 import com.jason.dao.BlogRespository;
 import com.jason.po.Blog;
 import com.jason.po.Type;
+import com.jason.util.MarkdownUtils;
+import com.jason.util.MyBeanUtils;
 import com.jason.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -37,6 +41,20 @@ public class BlogServiceImpl implements  BlogService{
         return blogRespository.getOne(id);
     }
 
+    //将markdown内容转换为html便于前端显示
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRespository.getOne(id);
+        if(blog==null){
+            throw new NotFoundException("该博客不存在");
+        }
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog,b);
+        String content = b.getContent();
+        b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        return b;
+    }
+
     @Override
     public Page<Blog> listBlog(Pageable pageable, BlogQuery blog) {
         return blogRespository.findAll(new Specification<Blog>() {
@@ -62,6 +80,23 @@ public class BlogServiceImpl implements  BlogService{
     }
 
     @Override
+    public Page<Blog> listBlog(Pageable pageable) {
+        return blogRespository.findAll(pageable);
+    }
+
+    @Override
+    public Page<Blog> listBlog(String query, Pageable pageable) {
+        return blogRespository.findByQuery(query,pageable);
+    }
+
+    @Override
+    public List<Blog> listRecommendBlogTop(Integer size) {
+        Sort.Order sort=new Sort.Order(Sort.Direction.DESC, "updateTime");
+        Pageable pageable = PageRequest.of(0,size,Sort.by(sort));
+        return blogRespository.findTop(pageable);
+    }
+
+    @Override
     @Transactional
     public Blog saveBlog(Blog blog) {
         if(blog.getId()==null){
@@ -81,7 +116,8 @@ public class BlogServiceImpl implements  BlogService{
         if(b==null){
             throw new NotFoundException("该博客不存在！");
         }
-        BeanUtils.copyProperties(blog, b);
+        BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
+        b.setUpdateTime(new Date());
         return blogRespository.save(b);
     }
 

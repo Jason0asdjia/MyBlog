@@ -6,6 +6,10 @@
     text-align: justify;
 }
 
+.typo li{
+    /*font-weight: 300;*/
+    padding: 3px 0;
+}
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 

@@ -6,7 +6,9 @@ import com.jason.po.Type;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -38,6 +40,13 @@ public class TypeServiceImpl implements TypeService {
     @Override
     public Page<Type> listType(Pageable pageable) {
         return typeRespository.findAll(pageable);
+    }
+
+    @Override
+    public List<Type> listTypeTop(Integer size) {
+        Sort.Order sort=new Sort.Order(Sort.Direction.DESC, "blogs.size");
+        Pageable pageable = PageRequest.of(0,size,Sort.by(sort));
+        return typeRespository.findTop(pageable);
     }
 
     @Override

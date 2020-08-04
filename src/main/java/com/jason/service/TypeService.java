@@ -18,6 +18,8 @@ public interface TypeService {
 
     Page<Type> listType(Pageable pageable);
 
+    List<Type> listTypeTop(Integer size);
+
     Type updateType(Long id, Type type);
 
     void deleteType(Long id);
