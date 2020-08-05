@@ -22,100 +22,24 @@
                     </div>
                     <div class="column right aligned">
                         共
-                        <h2 class="ui orange header m-inline-block m-text-thin"> 114 </h2>篇
+                        <h2 class="ui orange header m-inline-block m-text-thin" th:text="${blogCount}">  </h2>篇博客
                     </div>
                 </div>
             </div>
 
-            <h2 class="ui header center aligned">2020</h2>
+            <th:block th:each="item: ${archiveMap}">
+            <h2 class="ui header center aligned" th:text="${item.key}">2020</h2>
             <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
+                <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog: ${item.value}">
                     <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
+                        <i class="teal circle icon"></i><span th:text="${blog.title}"> </span>
+                        <div class="ui teal basic left pointing label m-padded-min m-text-thin" th:text="${#dates.format(blog.updateTime,'MMMdd')}">7月</div>
                     </span>
-                    <div class="ui pink basic label">原创</div>
+                    <div class="ui pink basic label" th:text="${blog.flag}">原创</div>
 
                 </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-
             </div>
-
-            <h2 class="ui header center aligned">2019</h2>
-            <div class="ui fluid vertical menu">
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-                <a href="#" target="_blank" class="item">
-                    <span>
-                        <i class="teal circle icon"></i>如何理财
-                        <div class="ui teal basic left pointing label m-padded-min m-text-thin">7月</div>
-                    </span>
-                    <div class="ui pink basic label">原创</div>
-
-                </a>
-
-            </div>
+            </th:block>
 
 
         </div>

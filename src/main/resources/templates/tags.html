@@ -9,193 +9,138 @@
 
 <body>
 <!-- 导航 -->
-<nav th:replace="_fragments::menu(3)" class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
+<nav th:replace="_fragments::menu(3)"
+     class="ui inverted attached segment m-padded-tb-mini m-opactity-mini m-shadow-small">
 </nav>
-    <!-- 中间内容 -->
-    <div class="m-container-small m-padded-tb-big ">
-        <div class="ui container">
-            <!-- header -->
-            <div class="ui top attached segment">
-                <div class="ui middle aligned two column grid">
-                    <div class="column">
-                        <h3 class="ui teal header">标签</h3>
-                    </div>
-                    <div class="column right aligned">
-                        共<h2 class="ui orange header m-inline-block m-text-thin"> 14 </h2>个
-                    </div>
+<!-- 中间内容 -->
+<div class="m-container-small m-padded-tb-big ">
+    <div class="ui container">
+        <!-- header -->
+        <div class="ui top attached segment">
+            <div class="ui middle aligned two column grid">
+                <div class="column">
+                    <h3 class="ui teal header">标签</h3>
                 </div>
-            </div>
-
-            <!-- 标签 -->
-            <div class="ui attached segment m-padded-tb-large">
-                <a href="#" target="_blank" class="ui teal basic left pointing large label m-margin-tb-tiny">习
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习五
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">阿松大习
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">啊习
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习阿达
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习官方
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习刚好人
-                    <div class="detail">22</div>
-                </a>
-                <a href="#" target="_blank" class="ui basic left pointing large label m-margin-tb-tiny">习阿三其
-                    <div class="detail">22</div>
-                </a>
-
-            </div>
-
-
-            <!-- content -->
-            <div class="ui top attached teal segment">
-                <div class="ui padded vertical segment  m-padded-tb-large m-moblile-lr-clear">
-                    <div class="ui mobile reversed stackable grid">
-                        <!-- 左边博客列表 -->
-                        <div class="eleven wide column">
-                            <h3 class="ui header">你真的理解什么是代码?</h3>
-                            <p class="m-text">shiro做安全框架，自己以前也了解过，感觉自己没啥问题，感觉自己没啥问题，但一用到项目中，傻眼了，只能重新学习了解</p>
-                            <div class="ui stackable grid">
-                                <div class="row">
-                                    <!-- 头像、时间 -->
-                                    <div class="eleven wide column">
-                                        <div class="ui mini horizontal link list">
-                                            <div class="item">
-                                                <img src="https://picsum.photos/id/10/100/100" class="ui avatar image"
-                                                    alt="">
-                                                <div class="content"><a href="#" class="header">徐炜乔</a></div>
-                                            </div>
-                                            <div class="item">
-                                                <i class="calendar icon"></i>2020-20-20
-                                            </div>
-
-                                            <div class="item">
-                                                <i class="eye icon"></i>123
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 认知升级 -->
-                                    <div class="right aligned five wide column">
-                                        <a href="#" target="_blank"
-                                            class="ui label teal basic m-padded-tiny m-text-thin">认知升级</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="column">
-                                        <a href="#"
-                                            class="ui basic teal left pointing label m-padded-min m-text-thin">测试</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="five wide column">
-                            <a href="#" target="_blank">
-                                <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="ui padded vertical segment  m-padded-tb-large m-moblile-lr-clear">
-                    <div class="ui mobile reversed stackable grid">
-                        <!-- 左边博客列表 -->
-                        <div class="eleven wide column">
-                            <h3 class="ui header">你真的理解什么是代码?</h3>
-                            <p class="m-text">shiro做安全框架，自己以前也了解过，感觉自己没啥问题，感觉自己没啥问题，但一用到项目中，傻眼了，只能重新学习了解</p>
-                            <div class="ui stackable grid">
-                                <div class="row">
-                                    <!-- 头像、时间 -->
-                                    <div class="eleven wide column">
-                                        <div class="ui mini horizontal link list">
-                                            <div class="item">
-                                                <img src="https://picsum.photos/id/10/100/100" class="ui avatar image"
-                                                    alt="">
-                                                <div class="content"><a href="#" class="header">徐炜乔</a></div>
-                                            </div>
-                                            <div class="item">
-                                                <i class="calendar icon"></i>2020-20-20
-                                            </div>
-
-                                            <div class="item">
-                                                <i class="eye icon"></i>123
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <!-- 认知升级 -->
-                                    <div class="right aligned five wide column">
-                                        <a href="#" target="_blank"
-                                            class="ui label teal basic m-padded-tiny m-text-thin">认知升级</a>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="column">
-                                        <a href="#"
-                                            class="ui basic teal left pointing label m-padded-min m-text-thin">测试</a>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="five wide column">
-                            <a href="#" target="_blank">
-                                <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- bottom -->
-            <div class="ui bottom attached segment">
-                <div class="ui top attached">
-                    <div class="ui middle aligned two column grid">
-                        <div class="column">
-                            <a href="#" class="ui teal mini basic button">上一页</a>
-                        </div>
-                        <div class="column right aligned">
-                            <a href="#" class="ui teal mini basic button">下一页</a>
-                        </div>
-                    </div>
+                <div class="column right aligned">
+                    共<h2 class="ui orange header m-inline-block m-text-thin" th:text="${#arrays.length(tags)}"> 14 </h2>
+                    个
                 </div>
             </div>
         </div>
 
+        <!-- 标签 -->
+        <div class="ui attached segment m-padded-tb-large">
+            <a href="#" th:href="@{/tags/{id}(id=${tag.id})}"
+               class="ui basic left pointing large label m-margin-tb-tiny"
+               th:classappend="${tag.id==activeTagId}?'teal'" th:each="tag: ${tags}">
+                <span th:text="${tag.name}"></span>
+                <div class="detail" th:text="${#arrays.length(tag.blogs)}">22</div>
+            </a>
 
+
+        </div>
+
+
+        <!-- content -->
+        <div class="ui top attached teal segment">
+            <div class="ui padded vertical segment m-padded-lr-reponsive m-padded-tb-large"
+                 th:each="blog : ${page.content}">
+                <div class="ui middle aligned mobile reversed stackable grid">
+                    <!-- 左边博客列表 -->
+                    <div class="eleven wide column">
+                        <h3 class="ui header"><a href="#" target="_blank" class="m-black"
+                                                 th:text="${blog.title}" th:href="@{/blog/{id}(id=${blog.id})}">?</a>
+                        </h3>
+                        <p class="m-text" th:text="|${blog.description}.......|">
+                        </p>
+                        <div class="ui stackable grid">
+                            <div class="row">
+                                <!-- 头像、时间 -->
+                                <div class="eleven wide column">
+                                    <div class="ui mini horizontal link list">
+                                        <div class="item">
+                                            <img src="https://picsum.photos/id/10/100/100"
+                                                 class="ui avatar image" alt="" th:src="@{${blog.user.avatar}}">
+                                            <div class="content"><a href="#" class="header"
+                                                                    th:text="${blog.user.nickname}"></a></div>
+                                        </div>
+                                        <div class="item">
+                                            <i class="calendar icon"></i><span
+                                                th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"> </span>
+                                        </div>
+
+                                        <div class="item">
+                                            <i class="eye icon"></i><span th:text="${blog.views}"> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 认知升级 -->
+                                <div class="right aligned five wide column">
+                                    <a href="#" target="_blank"
+                                       class="ui label teal basic m-padded-tiny m-text-thin"
+                                       th:text="${blog.type.name}"> </a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="column">
+                                    <a href="#" th:href="@{/tags/{id}(id=${tag.id})}"
+                                       class="ui basic left pointing label m-padded-min m-text-thin"
+                                       th:classappend="${tag.id==activeTagId}?'teal'"
+                                       th:each="tag : ${blog.tags}" th:text="${tag.name}"> </a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="five wide column">
+                        <a href="#" target="_blank" th:href="@{/blog/{id}(id=${blog.id})}">
+                            <img src="https://picsum.photos/id/1/800/400" alt="" class="ui rounded image"
+                                 th:src="@{${blog.firstPicture}}">
+                        </a>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!-- bottom -->
+        <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
+            <div class="ui top attached">
+                <div class="ui middle aligned two column grid">
+                    <div class="column ">
+                        <a href="#" class="ui teal mini button"
+                           th:href="@{'/tags/'+${activeTagId}(page=${page.number}-1)}"
+                           th:unless="${page.first}">上一页</a>
+                    </div>
+                    <div class="column right aligned">
+                        <a href="#" class="ui teal mini button"
+                           th:href="@{'/tags/'+${activeTagId}(page=${page.number}+1)}"
+                           th:unless="${page.last}">下一页</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- 底部footer -->
-    <footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive m-opactity-mini">
-    </footer>
+
+</div>
+
+<!-- 底部footer -->
+<footer th:replace="_fragments::footer" class="ui inverted vertical segment m-padded-tb-massive m-opactity-mini">
+</footer>
 
 
-    <th:block th:replace="_fragments :: scripts">
-    </th:block>
+<th:block th:replace="_fragments :: scripts">
+</th:block>
 
-    <script>
-        // 下拉菜单css实现
-        $('.menu.toggle').click(function () {
-            $('.m-item').toggleClass('m-mobile-hide');
+<script>
+    // 下拉菜单css实现
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('m-mobile-hide');
 
-        });
+    });
 
-    </script>
+</script>
 
 
 </body>
