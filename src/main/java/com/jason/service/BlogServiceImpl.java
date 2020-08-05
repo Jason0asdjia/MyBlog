@@ -42,6 +42,7 @@ public class BlogServiceImpl implements  BlogService{
     }
 
     //将markdown内容转换为html便于前端显示
+    @Transactional
     @Override
     public Blog getAndConvert(Long id) {
         Blog blog = blogRespository.getOne(id);
@@ -52,6 +53,7 @@ public class BlogServiceImpl implements  BlogService{
         BeanUtils.copyProperties(blog,b);
         String content = b.getContent();
         b.setContent(MarkdownUtils.markdownToHtmlExtensions(content));
+        blogRespository.updateViews(id);
         return b;
     }
 

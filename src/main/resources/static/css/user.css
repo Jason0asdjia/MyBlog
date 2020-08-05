@@ -6,6 +6,16 @@ body {
     background: url(../images/criss-cross.png);
 }
 
+/*----color------*/
+.m-teal{
+    color :#00B5AD !important;
+}
+
+.m-black {
+    color: #333 !important;
+}
+
+
 
 /* 标题栏的宽度 */
 
@@ -163,11 +173,6 @@ body {
 }
 
 
-/* --color-- */
-
-.m-black {
-    color: #333 !important;
-}
 
 
 /* --shadow-- */
