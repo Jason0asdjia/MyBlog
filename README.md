@@ -6,7 +6,7 @@
 
 ## 前端
 - 采用Semantic UI模板制作前端页面
-- 前端页面的属性分析详见静态文件夹中的[README](MyBlog/master/src/main/resources/前端页面设计.md)
+- 前端页面的属性分析详见静态文件夹中的[README](src/main/resources/前端页面设计.md)
 - 主要思路：设计一个简单却不丑陋的前端页面，可以尽快的加入后端，
 			日后可以对前端进行升级改造。
 				
@@ -24,7 +24,7 @@
     - markdown转htmlcommonmark-java
 
 ## 后端
-- 具体设计可以查看逻辑包内的[README](MyBlog/master/src/main/java/README.md)
+- 具体设计可以查看逻辑包内的[README](src/main/java/README.md)
 
         - 核心框架：SpringBoot 2.x
         - 项目构建：jdk1.8、Maven 3
