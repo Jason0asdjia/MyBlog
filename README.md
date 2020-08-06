@@ -37,6 +37,10 @@
 ## 数据库 
     - Mysql 5.7
 
+## 配置
+    - 内容配置在i18n中
+    - spring配置为application.yml
+
 ## TODO
     - 其他页面都应用blog的弹窗设定
     - 各个界面的动画设置https://animate.style/

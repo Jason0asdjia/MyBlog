@@ -1,6 +1,7 @@
 package com.jason.web.admin;
 
 import com.jason.po.User;
+import com.jason.service.BlogService;
 import com.jason.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ import javax.servlet.http.HttpSession;
 public class LoginController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private BlogService blogService;
 
     @GetMapping
     public String loginPage() {
@@ -44,5 +48,12 @@ public class LoginController {
         session.removeAttribute("user");
         return "redirect:/admin";
     }
+//
+//    @GetMapping("/footer/newblog")
+//    public String newblogs(Model model){
+//        model.addAttribute("newblogs",blogService.listRecommendBlogTop(3));
+//        return "admin/_fragments::newblogList";
+//    }
+
 
 }

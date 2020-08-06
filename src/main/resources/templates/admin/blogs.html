@@ -70,10 +70,6 @@
                                 <div th:each="type: ${types}" class="item" data-value="1" th:data-value="${type.id}"
                                      th:text="${type.name}">错误日志
                                 </div>
-                                <!--/*-->
-                                <div class="item" data-value="2">日常报告</div>
-                                <div class="item" data-value="3">博客列表</div>
-                                <!--*/-->
                             </div>
                         </div>
                         <button id="clear-button" class="ui compact button">clear</button>
@@ -113,12 +109,12 @@
 
                 <tbody>
                 <tr th:each="blog, iterStat:${page.content}">
-                    <td th:text="${iterStat.count}">1</td>
-                    <td th:text="${blog.title}">window更新</td>
-                    <td th:text="${blog.type.name}">认知升级</td>
-                    <td th:text="${blog.recommend}?'是':'否'">是</td>
-                    <td th:text="${blog.published}?'发布':'草稿'">草稿</td>
-                    <td th:text="${blog.updateTime}">2020-7-17</td>
+                    <td th:text="${iterStat.count}"></td>
+                    <td th:text="${blog.title}"></td>
+                    <td th:text="${blog.type.name}"></td>
+                    <td th:text="${blog.recommend}?'是':'否'"></td>
+                    <td th:text="${blog.published}?'发布':'草稿'"></td>
+                    <td th:text="${blog.updateTime}"></td>
 
                     <td>
                         <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}"
@@ -148,7 +144,7 @@
             <div class="ui success message" th:unless="${#strings.isEmpty(message)}">
                 <i class="close icon"></i>
                 <div class="header">提示：</div>
-                <p th:text="${message}">恭喜，操作成功！</p>
+                <p th:text="${message}"></p>
             </div>
         </div>
 
@@ -159,48 +155,7 @@
 </div>
 
 <!-- 底部footer -->
-<footer th:replace="admin/_fragments :: footer"
-        class="ui inverted vertical segment m-padded-tb-massive m-opactity-mini">
-    <div class="ui center aligned container">
-        <div class="ui inverted divided stackable grid">
-            <div class="three wide column">
-                <div class="ui inverted link list ">
-                    <div class="item">
-                        <img src="../../static/images/terminal.ico" th:src="@{/images/terminal.ico}"
-                             class="ui rounded image" alt="" style="width:80px">
-                    </div>
-                </div>
-            </div>
-            <div class="three wide column">
-                <h4 class="ui inverted header m-text-spaced">最新博客</h4>
-                <div class="ui inverted link list ">
-                    <a href="#" class="item">测试一</a>
-                    <a href="#" class="item">测试二</a>
-                    <a href="#" class="item">测试三</a>
-
-                </div>
-            </div>
-            <div class="three wide column">
-                <h4 class="ui inverted header m-text-spaced">联系我</h4>
-                <div class="ui inverted link list ">
-                    <a href="#" class="item m-text-spaced">Email:xuweiqiao@126.com</a>
-                    <a href="#" class="item m-text-spaced">QQ : 2436943262</a>
-                </div>
-            </div>
-            <div class="seven wide column">
-                <h4 class="ui inverted header m-text-spaced">关于博客</h4>
-                <p class="m-opactity-min m-text-spaced">搭建该博客的初衷是学习框架知识，同时博客可以用来记录自己在程序员成长中的点点滴滴</p>
-            </div>
-
-        </div>
-
-        <!-- 底部线 -->
-        <div class="ui inverted section divider"></div>
-        <p class="m-text-thin m-text-spaced m-opactity-tiny">Copyright <i class="copyright outline icon"></i> 2020
-            Designed by Jason</p>
-    </div>
-
-
+<footer th:replace="admin/_fragments :: footer">
 </footer>
 
 
@@ -227,8 +182,9 @@
         });
 
     }
+
     $('#clear-button')
-        .on('click', function() {
+        .on('click', function () {
             $('.ui.type.dropdown')
                 .dropdown('clear')
             ;

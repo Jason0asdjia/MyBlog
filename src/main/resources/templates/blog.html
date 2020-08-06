@@ -25,11 +25,11 @@
                 </div>
                 <div class="item">
                     <i class="calendar icon"></i><span
-                        th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}">2020-20-20</span>
+                        th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd')}"></span>
                 </div>
 
                 <div class="item">
-                    <i class="eye icon"></i><span th:text="${blog.views}">123</span>
+                    <i class="eye icon"></i><span th:text="${blog.views}"></span>
                 </div>
             </div>
         </div>
@@ -45,7 +45,7 @@
             </div>
 
             <!-- 具体内容 -->
-            <h2 class="ui center aligned header" th:text="${blog.title}">标题</h2>
+            <h2 class="ui center aligned header" th:text="${blog.title}"></h2>
             <br>
             <!--                <pre><code class="language-css">p { color: red }</code></pre>-->
             <div id="content" class="typo typo-selection js-toc-content m-padded-lr-reponsive m-padded-tb-large"
@@ -56,36 +56,39 @@
 
             <!-- 标签 -->
             <div class="m-padded-lr-reponsive">
-                <div class="ui basic teal left pointing label" th:each="tag: ${blog.tags}" th:text="${tag.name}">方法论
+                <div class="ui basic teal left pointing label" th:each="tag: ${blog.tags}" th:text="${tag.name}">
                 </div>
             </div>
 
             <!-- 赞赏 , 点击弹出二维码 -->
-            <div class="ui segment center aligned basic">
-                <button id="payButton" class="ui orange basic circular button">赞赏</button>
-            </div>
+            <div th:if="${blog.appreciation}">
+                <div class="ui segment center aligned basic">
+                    <button id="payButton" class="ui orange basic circular button">赞赏</button>
+                </div>
 
-            <!-- 弹窗 -->
-            <div class="ui payArea flowing popup transition hidden">
-                <div class="ui orange basic label">
-                    <div class="ui images" style="font-size: inherit !important;">
-                        <div class="image">
-                            <img src="../static/images/terminal.ico" th:src="@{/images/terminal.ico}" alt=""
-                                 class="ui rounded bordered image" style="width: 120px;">
-                            <div>支付宝</div>
-                        </div>
-                        <div class="image">
-                            <img src="../static/images/terminal.ico" th:src="@{/images/terminal.ico}" alt=""
-                                 class="ui rounded bordered image" style="width: 120px;">
-                            <div>微信</div>
+                <!-- 弹窗 -->
+                <div class="ui payArea flowing popup transition hidden">
+                    <div class="ui orange basic label">
+                        <div class="ui images" style="font-size: inherit !important;">
+                            <div class="image">
+                                <img src="../static/images/terminal.ico" th:src="@{/images/terminal.ico}" alt=""
+                                     class="ui rounded bordered image" style="width: 120px;">
+                                <div>支付宝</div>
+                            </div>
+                            <div class="image">
+                                <img src="../static/images/terminal.ico" th:src="@{/images/terminal.ico}" alt=""
+                                     class="ui rounded bordered image" style="width: 120px;">
+                                <div>微信</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
 
+
         </div>
 
-        <div class="ui attached positive message">
+        <div class="ui attached positive message" th:if="${blog.shareStatement}">
             <!-- 博客信息 -->
             <div class="ui middle aligned grid">
                 <div class="eleven wide column">
@@ -105,7 +108,7 @@
 
         </div>
 
-        <div class="ui bottom attached segment">
+        <div class="ui bottom attached segment" th:if="${blog.commentabled}">
             <!-- 留言列表 -->
             <div id="comment-container" class="ui segment">
                 <div th:fragment="commentList">
@@ -117,15 +120,15 @@
                             </a>
                             <div class="content">
                                 <a class="author">
-                                    <span th:text="${comment.nickname}" style="font-weight: lighter">Matt</span>
+                                    <span th:text="${comment.nickname}" style="font-weight: lighter"></span>
                                     <div class="ui min basic teal left pointing label m-padded-min" th:if="${comment.adminComment}">博主</div>
                                 </a>
                                 <div class="metadata">
                                     <span class="date"
-                                          th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                          th:text="${#dates.format(comment.createTime,'yyyy-MM-dd HH:mm')}"></span>
                                 </div>
                                 <div class="text" th:text="${comment.content}" style="font-weight: 550">
-                                    How artistic!
+
                                 </div>
                                 <div class="actions">
                                     <a class="reply" data-commentid="1" data-commentnickname="Matt"
@@ -147,10 +150,10 @@
                                         </a>
                                         <div class="metadata">
                                             <span class="date"
-                                                  th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                                                  th:text="${#dates.format(reply.createTime,'yyyy-MM-dd HH:mm')}"></span>
                                         </div>
                                         <div class="text" th:text="${reply.content}" style="font-weight: 550">
-                                            How artistic!
+
                                         </div>
                                         <div class="actions">
                                             <a class="reply" data-commentid="1" data-commentnickname="Matt"
@@ -278,7 +281,7 @@
 
         // 生成二维码
         //TODO 部署后指定域名
-        var serverurl = "127.0.0.1:8080";
+        var serverurl = /*[[#{blog.serverurl}]]*/"";
         var url = /*[[@{/blog/{id}(id=${blog.id})}]]*/"";
         var qrcode = new QRCode("qrcode", {
             text: serverurl + url,

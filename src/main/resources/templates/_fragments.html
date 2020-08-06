@@ -21,7 +21,7 @@
     <div class="ui container">
         <div class="ui inverted secondary stackable menu">
             <h2 class="ui header teal item">就到这里吧</h2>
-            <a href="#" th:href="@{/}" class="item m-item m-mobile-hide" th:classappend="${n==1}?'active'"><i class="home icon"></i>首页</a>
+            <a href="#" th:href="@{/}" class="item m-item m-mobile-hide" th:classappend="${n==1}?'active'"><i class="home icon"></i><span th:text="#{nav.index}"></span></a>
             <a href="#" th:href="@{/types/-1}" class="item m-item m-mobile-hide" th:classappend="${n==2}?'active'"><i class="idea icon"></i>分类</a>
             <a href="#" th:href="@{/tags/-1}" class="item m-item m-mobile-hide" th:classappend="${n==3}?'active'"><i class="tags icon"></i>标签</a>
             <a href="#" th:href="@{/archives}" class="item m-item m-mobile-hide" th:classappend="${n==4}?'active'"><i class="clone icon"></i>归档</a>
@@ -56,18 +56,17 @@
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-spaced">最新博客</h4>
-                <div class="ui inverted link list ">
-                    <a href="#" class="item">测试一</a>
-                    <a href="#" class="item">测试二</a>
-                    <a href="#" class="item">测试三</a>
-
+                <div id="newblog-container">
+                    <div class="ui inverted link list " th:fragment="newblogList">
+                        <a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="item" th:each="blog: ${newblogs}" th:text="${blog.title}"> </a>
+                    </div>
                 </div>
             </div>
             <div class="three wide column">
                 <h4 class="ui inverted header m-text-spaced">联系我</h4>
                 <div class="ui inverted link list ">
-                    <a href="#" class="item m-text-spaced">Email:xuweiqiao@126.com</a>
-                    <a href="#" class="item m-text-spaced">QQ : 2436943262</a>
+                    <a href="#" class="item m-text-spaced" th:text="#{index.email}">Email:</a>
+                    <a href="#" class="item m-text-spaced" th:text="#{index.qq}">QQ : </a>
                 </div>
             </div>
             <div class="seven wide column">
@@ -107,6 +106,10 @@
     <!-- 二维码生成 -->
     <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
 
+
+    <script>
+        $('#newblog-container').load(/*[[@{/footer/newblog}]]*/"/footer/newblog");
+    </script>
 </th:block>
 </body>
 </html>
